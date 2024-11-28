@@ -1,6 +1,6 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
-import { Menu, Search, X } from "lucide-react";
-import PropTypes from 'prop-types';
+import { Camera, Search, X } from "lucide-react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 export const Header = ({ onSearch, logoClick, hideSearchBar }) => {
@@ -23,9 +23,6 @@ export const Header = ({ onSearch, logoClick, hideSearchBar }) => {
         <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
             <div className="flex items-center justify-between px-4 h-14">
                 <div className="flex items-center gap-4">
-                    <button className="p-2 hover:bg-gray-100 rounded-full">
-                        <Menu className="w-6 h-6" />
-                    </button>
                     <a
                         href="/"
                         onClick={e => {
@@ -34,7 +31,8 @@ export const Header = ({ onSearch, logoClick, hideSearchBar }) => {
                         }}
                         className="flex items-center cursor-pointer"
                     >
-                        <div className="flex items-center cursor-pointer">
+                        <div className="flex items-center cursor-pointer gap-4">
+                            <Camera className="w-6 h-6" />
                             <span className="text-xl font-bold">Maalsi Tube</span>
                         </div>
                     </a>
