@@ -1,8 +1,6 @@
 import { useUser } from "@clerk/clerk-react";
 import { Plus } from "lucide-react";
-import PropTypes from 'prop-types';
-import React from "react";
-
+import PropTypes from "prop-types";
 export default function UploadButton({ onClick }) {
     const { isSignedIn } = useUser();
 

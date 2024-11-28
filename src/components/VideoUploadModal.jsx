@@ -1,7 +1,7 @@
 import { useUser } from "@clerk/clerk-react";
 import { Upload, X } from "lucide-react";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import { useState } from "react";
 import { uploadToFirebase } from "../services/video-service";
 
 export default function VideoUploadModal({ onClose, onUploadComplete }) {
