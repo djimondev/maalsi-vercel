@@ -50,5 +50,5 @@ jobs:
         run: npm install
 
       # Étape 4 : Lancer le linter
-      - name: Run linter
+      - name: Run test
         run: npm run test
