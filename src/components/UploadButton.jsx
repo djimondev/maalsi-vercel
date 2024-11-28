@@ -1,5 +1,6 @@
 import { useUser } from "@clerk/clerk-react";
 import { Plus } from "lucide-react";
+import PropTypes from 'prop-types';
 import React from "react";
 
 export default function UploadButton({ onClick }) {
@@ -18,3 +19,7 @@ export default function UploadButton({ onClick }) {
         </div>
     );
 }
+
+UploadButton.propTypes = {
+    onClick: PropTypes.func.isRequired
+};

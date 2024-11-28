@@ -1,5 +1,6 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import { Menu, Search, X } from "lucide-react";
+import PropTypes from 'prop-types';
 import { useState } from "react";
 
 export const Header = ({ onSearch, logoClick, hideSearchBar }) => {
@@ -68,4 +69,15 @@ export const Header = ({ onSearch, logoClick, hideSearchBar }) => {
             </div>
         </header>
     );
+};
+
+Header.propTypes = {
+    onSearch: PropTypes.func.isRequired,
+    logoClick: PropTypes.func,
+    hideSearchBar: PropTypes.bool
+};
+
+Header.defaultProps = {
+    logoClick: () => {},
+    hideSearchBar: false
 };

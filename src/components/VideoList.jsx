@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { VideoCard } from "./VideoCard";
 
 export const VideoList = ({ loading, videos, setSelectedVideo }) => {
@@ -28,4 +29,19 @@ export const VideoList = ({ loading, videos, setSelectedVideo }) => {
             ))}
         </div>
     );
+};
+
+VideoList.propTypes = {
+    loading: PropTypes.bool.isRequired,
+    videos: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            thumbnail: PropTypes.string.isRequired,
+            channel: PropTypes.string.isRequired,
+            views: PropTypes.string.isRequired,
+            timestamp: PropTypes.string.isRequired
+        })
+    ).isRequired,
+    setSelectedVideo: PropTypes.func.isRequired
 };

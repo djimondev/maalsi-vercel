@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from "react";
 
 export const VideoCard = ({ video, onClick }) => {
@@ -27,4 +28,16 @@ export const VideoCard = ({ video, onClick }) => {
             </div>
         </div>
     );
+};
+
+VideoCard.propTypes = {
+    video: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        thumbnail: PropTypes.string.isRequired,
+        channel: PropTypes.string.isRequired,
+        views: PropTypes.string.isRequired,
+        timestamp: PropTypes.string.isRequired
+    }).isRequired,
+    onClick: PropTypes.func.isRequired
 };

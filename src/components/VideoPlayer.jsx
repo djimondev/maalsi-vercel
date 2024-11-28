@@ -1,4 +1,5 @@
 import { Flag, Share, ThumbsDown, ThumbsUp } from "lucide-react";
+import PropTypes from 'prop-types';
 import React from "react";
 import ReactPlayer from "react-player";
 import { Header } from "./Header";
@@ -83,4 +84,21 @@ export const VideoPlayer = ({
       </div>
     </div>
   );
+};
+
+VideoPlayer.propTypes = {
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    channel: PropTypes.string.isRequired,
+    views: PropTypes.string.isRequired,
+    timestamp: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    likes: PropTypes.number.isRequired,
+    dislikes: PropTypes.number.isRequired,
+    hasLiked: PropTypes.bool.isRequired,
+    hasDisliked: PropTypes.bool.isRequired,
+    onLike: PropTypes.func.isRequired,
+    onDislike: PropTypes.func.isRequired,
+    onReport: PropTypes.func.isRequired,
+    onClose: PropTypes.func.isRequired
 };
