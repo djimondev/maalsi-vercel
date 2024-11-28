@@ -1,5 +1,6 @@
 import { useUser } from "@clerk/clerk-react";
 import { Upload, X } from "lucide-react";
+import PropTypes from 'prop-types';
 import React, { useState } from "react";
 import { uploadToS3 } from "../utils/s3Upload";
 
@@ -163,3 +164,8 @@ export default function VideoUploadModal({ onClose, onUploadComplete }) {
         </div>
     );
 }
+
+VideoUploadModal.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    onUploadComplete: PropTypes.func.isRequired
+};
