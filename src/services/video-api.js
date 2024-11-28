@@ -83,7 +83,7 @@ export const reportVideo = async (videoId, userId) => {
 
     // Mise à jour sur le serveur
     const updatedVideo = {
-        reported_by: Array.from(reportedBy),
+        reported_by: Array.from(reportedBy)
     };
 
     const patchResponse = await fetch(`${API_URL}/videos/${videoId}`, {

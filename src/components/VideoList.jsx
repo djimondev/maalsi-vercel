@@ -1,15 +1,12 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { VideoCard } from "./VideoCard";
 
 export const VideoList = ({ loading, videos, setSelectedVideo }) => {
     if (loading) {
         return (
             <div className="flex items-center justify-center mt-12">
-                <div
-                    className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]">
-                    <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-                        Loading...
-                    </span>
+                <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-e-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]">
+                    <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Loading...</span>
                 </div>
             </div>
         );
