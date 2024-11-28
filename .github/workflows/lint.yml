@@ -1,0 +1,35 @@
+name: Lint Codebase
+
+on:
+    pull_request:
+        branches:
+            - main
+            - develop
+    push:
+        branches:
+            - main
+            - develop
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+
+        steps:
+            # Étape 1 : Checkout du code
+            - name: Checkout code
+              uses: actions/checkout@v3
+
+            # Étape 2 : Installer Node.js
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "18"
+                  cache: "npm"
+
+            # Étape 3 : Installer les dépendances
+            - name: Install dependencies
+              run: npm install
+
+            # Étape 4 : Lancer le linter
+            - name: Run linter
+              run: npm run lint
