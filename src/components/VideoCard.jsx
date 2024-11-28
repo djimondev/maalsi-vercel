@@ -5,7 +5,7 @@ export const VideoCard = ({ video, onClick }) => {
     const { id, title, thumbnail, channel, views, timestamp } = video;
 
     return (
-        <div className="flex flex-col cursor-pointer group" onClick={onClick} role="button">
+        <button className="flex flex-col cursor-pointer group" onClick={onClick} role="button">
             <div className="relative aspect-video rounded-xl overflow-hidden bg-gray-400">
                 {thumbnail !== "" ? (
                     <img src={thumbnail} alt={title} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-200" />
@@ -26,7 +26,7 @@ export const VideoCard = ({ video, onClick }) => {
                     <span>{timestamp}</span>
                 </div>
             </div>
-        </div>
+        </button>
     );
 };
 
