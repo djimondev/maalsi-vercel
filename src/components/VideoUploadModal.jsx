@@ -1,8 +1,8 @@
 import { useUser } from "@clerk/clerk-react";
 import { Upload, X } from "lucide-react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import React, { useState } from "react";
-import { uploadToS3 } from "../utils/s3Upload";
+import { uploadToFirebase } from "../services/video-service";
 
 export default function VideoUploadModal({ onClose, onUploadComplete }) {
     const { user } = useUser();
@@ -44,7 +44,7 @@ export default function VideoUploadModal({ onClose, onUploadComplete }) {
         setError("");
 
         try {
-            const { videoUrl, thumbnailUrl } = await uploadToS3(file, thumbnail);
+            const { videoUrl, thumbnailUrl } = await uploadToFirebase(file, thumbnail);
 
             onUploadComplete({
                 url: videoUrl,
