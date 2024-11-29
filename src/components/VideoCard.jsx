@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export const VideoCard = ({ video, onClick }) => {
-  const { id, title, thumbnail, channel, views, timestamp } = video;
+  const { title, thumbnail, channel, views, timestamp } = video;
 
   return (
     <button className="flex flex-col cursor-pointer group" onClick={onClick}>
@@ -25,7 +25,7 @@ export const VideoCard = ({ video, onClick }) => {
         )}
       </div>
       <div className="mt-3 px-1">
-        <h3 className="text-sm font-semibold line-clamp-2">{`${title}`}</h3>
+        <h3 className="text-sm font-semibold line-clamp-2">{title}</h3>
         <p className="text-sm text-gray-600 mt-1">{channel}</p>
         <div className="text-sm text-gray-600">
           <span>{views} views</span>
